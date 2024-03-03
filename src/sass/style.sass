@@ -28,11 +28,17 @@
     font-size: 18px
     color: white
 
-    &:focus, &:valid
+    &:focus
       outline: 0
       border-bottom-color: lightblue
 
-    &:focus + label span, &:valid + label span
+    &:not(:placeholder-shown)
+      border-bottom-color: orange
+
+    &:valid
+      border-bottom-color: lightgreen
+
+    &:focus + label span, &:not(:placeholder-shown) + label span
       color: lightblue
       transform: translateY(-30px)
 
